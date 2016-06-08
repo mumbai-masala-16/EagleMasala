@@ -182,9 +182,10 @@
 
 		<plugins>
 
-			<!-- <plugin> <groupId>org.mortbay.jetty</groupId> <artifactId>jetty-maven-plugin</artifactId> <version>${jetty.maven.plugin.version}</version> 
-				<configuration> <scanIntervalSeconds>5</scanIntervalSeconds> <webAppConfig> <contextPath>/customerMgr</contextPath> </webAppConfig> 
-				</configuration> </plugin> -->
+			<!-- <plugin> <groupId>org.mortbay.jetty</groupId> <artifactId>jetty-maven-plugin</artifactId> 
+				<version>${jetty.maven.plugin.version}</version> <configuration> <scanIntervalSeconds>5</scanIntervalSeconds> 
+				<webAppConfig> <contextPath>/customerMgr</contextPath> </webAppConfig> </configuration> 
+				</plugin> -->
 
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -195,8 +196,13 @@
 					<target>${target.java.version}</target>
 				</configuration>
 			</plugin>
-
-
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+				<configuration>
+					<outputDirectory>D:\apache-tomcat-7.0.35\webapps</outputDirectory>
+				</configuration>
+			</plugin>
 		</plugins>
 	</build>
 </project>

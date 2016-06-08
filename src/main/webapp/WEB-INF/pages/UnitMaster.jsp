@@ -62,7 +62,7 @@ $(document).ready(function() {
     editor = new $.fn.dataTable.Editor( {
         ajax: {
         	
-        	url : "/customerMgr/add",
+        	url : "http://localhost:8081/customerMgr/add",
         	type : "POST",
         	datatype:"json",
         	contentType : "application/json",
@@ -72,10 +72,9 @@ $(document).ready(function() {
         	},
         	success:function(res){
                 alert("Data Updated successfully.");
-               // $(this).dialog('close');
-                //var oTable = $('#example').dataTable();
-                //oTable.fnClearTable( 0 );
-                //oTable.fnDraw();
+                editor.close();
+               // var table = $('#example').dataTable();
+               // table.api().ajax.reload();
             },
             error:function(res){
                 alert("error occured!");
@@ -101,7 +100,7 @@ $(document).ready(function() {
     $('#example').DataTable( {
         dom: "Bfrtip",
         ajax: {
-            url: "/customerMgr/list",
+        	url : "http://localhost:8081/customerMgr/list",
             type: 'GET'
         },
         columns: [
