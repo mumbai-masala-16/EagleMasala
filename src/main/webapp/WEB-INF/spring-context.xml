@@ -11,15 +11,15 @@
 		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 
     <context:annotation-config/>
-    <context:component-scan base-package="com.ravi.masala"/>
+    <context:component-scan base-package="com.rrd.eaglemasala"/>
 
     <mvc:annotation-driven/>
     <mvc:resources mapping="/resources/**" location="resources/"/>
-    <mvc:view-controller path="/home" view-name="home"/>
-	<mvc:view-controller path="/flot" view-name="flot"/>
+   <!--  <mvc:view-controller path="/home" view-name="home"/>
+	<mvc:view-controller path="/list" view-name="list"/>
     <mvc:view-controller path="/morris" view-name="morris"/>
     <mvc:view-controller path="/tables" view-name="tables"/>
-    <mvc:view-controller path="/UnitMaster" view-name="UnitMaster"/>
+    <mvc:view-controller path="/UnitMaster" view-name="UnitMaster"/> -->
     <beans:bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <beans:property name="prefix" value="/WEB-INF/pages/"/>
         <beans:property name="suffix" value=".jsp"/>
@@ -50,7 +50,7 @@
         </property> -->
         <property name="packagesToScan">
         <list>
-        	<value>com.ravi.masala.domain</value>
+        	<value>com.rrd.eaglemasala</value>
         </list>
         </property>
         

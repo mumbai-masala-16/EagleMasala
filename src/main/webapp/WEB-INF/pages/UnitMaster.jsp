@@ -13,43 +13,43 @@
 <title>Unit Master</title>
 
 
-<link rel="stylesheet" type="text/css" href="/customerMgr/resources/css/datatable/jquery.dataTables.min.css">
-<link rel="stylesheet" type="text/css" href="/customerMgr/resources/css/datatable/editor.dataTables.css">
-<link rel="stylesheet" type="text/css" href="/customerMgr/resources/css/datatable/buttons.dataTables.css">
-<link rel="stylesheet" type="text/css" href="/customerMgr/resources/css/datatable/select.dataTables.css">
-<link rel="stylesheet" type="text/css" href="/customerMgr/resources/css/datatable/responsive.dataTables.css">
-<link rel="stylesheet" type="text/css" href="/customerMgr/resources/css/datatable/dataTables.jqueryui.css">
+<link rel="stylesheet" type="text/css" href="resources/css/datatable/jquery.dataTables.min.css">
+<link rel="stylesheet" type="text/css" href="resources/css/datatable/editor.dataTables.css">
+<link rel="stylesheet" type="text/css" href="resources/css/datatable/buttons.dataTables.css">
+<link rel="stylesheet" type="text/css" href="resources/css/datatable/select.dataTables.css">
+<link rel="stylesheet" type="text/css" href="resources/css/datatable/responsive.dataTables.css">
+<link rel="stylesheet" type="text/css" href="resources/css/datatable/dataTables.jqueryui.css">
 
-<!-- <link rel="stylesheet" type="text/css" href="/customerMgr/resources/css/datatable/buttons.bootstrap.css">
-<link rel="stylesheet" type="text/css" href="/customerMgr/resources/css/datatable/buttons.jqueryui.css">
-<link rel="stylesheet" type="text/css" href="/customerMgr/resources/css/datatable/dataTables.bootstrap.css">
-<link rel="stylesheet" type="text/css" href="/customerMgr/resources/css/datatable/editor.bootstrap.css">
-<link rel="stylesheet" type="text/css" href="/customerMgr/resources/css/datatable/editor.jqueryui.css">
-<link rel="stylesheet" type="text/css" href="/customerMgr/resources/css/datatable/jquery.dataTables_themeroller.css">
-<link rel="stylesheet" type="text/css" href="/customerMgr/resources/css/datatable/jquery.dataTables.css">
-<link rel="stylesheet" type="text/css" href="/customerMgr/resources/css/datatable/responsive.bootstrap.css">
-<link rel="stylesheet" type="text/css" href="/customerMgr/resources/css/datatable/responsive.jqueryui.css">
-<link rel="stylesheet" type="text/css" href="/customerMgr/resources/css/datatable/select.bootstrap.css">
-<link rel="stylesheet" type="text/css" href="/customerMgr/resources/css/datatable/select.jqueryui.css">
+<!-- <link rel="stylesheet" type="text/css" href="resources/css/datatable/buttons.bootstrap.css">
+<link rel="stylesheet" type="text/css" href="resources/css/datatable/buttons.jqueryui.css">
+<link rel="stylesheet" type="text/css" href="resources/css/datatable/dataTables.bootstrap.css">
+<link rel="stylesheet" type="text/css" href="resources/css/datatable/editor.bootstrap.css">
+<link rel="stylesheet" type="text/css" href="resources/css/datatable/editor.jqueryui.css">
+<link rel="stylesheet" type="text/css" href="resources/css/datatable/jquery.dataTables_themeroller.css">
+<link rel="stylesheet" type="text/css" href="resources/css/datatable/jquery.dataTables.css">
+<link rel="stylesheet" type="text/css" href="resources/css/datatable/responsive.bootstrap.css">
+<link rel="stylesheet" type="text/css" href="resources/css/datatable/responsive.jqueryui.css">
+<link rel="stylesheet" type="text/css" href="resources/css/datatable/select.bootstrap.css">
+<link rel="stylesheet" type="text/css" href="resources/css/datatable/select.jqueryui.css">
  -->
 
-<script type="text/javascript" src="/customerMgr/resources/js/datatable/jquery-2.2.3.js"></script>  
-<script type="text/javascript" src="/customerMgr/resources/js/datatable/jquery.dataTables.min.js"></script>
-<script type="text/javascript" src="/customerMgr/resources/js/datatable/dataTables.editor.js"></script>
-<script type="text/javascript" src="/customerMgr/resources/js/datatable/dataTables.buttons.js"></script>
-<script type="text/javascript" src="/customerMgr/resources/js/datatable/dataTables.select.js"></script>
-<script type="text/javascript" src="/customerMgr/resources/js/datatable/dataTables.jqueryui.js"></script>
-<script type="text/javascript" src="/customerMgr/resources/js/datatable/dataTables.responsive.js"></script>
+<script type="text/javascript" src="resources/js/datatable/jquery-2.2.3.js"></script>  
+<script type="text/javascript" src="resources/js/datatable/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="resources/js/datatable/dataTables.editor.js"></script>
+<script type="text/javascript" src="resources/js/datatable/dataTables.buttons.js"></script>
+<script type="text/javascript" src="resources/js/datatable/dataTables.select.js"></script>
+<script type="text/javascript" src="resources/js/datatable/dataTables.jqueryui.js"></script>
+<script type="text/javascript" src="resources/js/datatable/dataTables.responsive.js"></script>
 
 
-<!-- <script type="text/javascript" src="/customerMgr/resources/js/datatable/buttons.jqueryui.js"></script>
-<script type="text/javascript" src="/customerMgr/resources/js/datatable/buttons.bootstrap.js"></script>
+<!-- <script type="text/javascript" src="resources/js/datatable/buttons.jqueryui.js"></script>
+<script type="text/javascript" src="resources/js/datatable/buttons.bootstrap.js"></script>
 
-<script type="text/javascript" src="/customerMgr/resources/js/datatable/dataTables.bootstrap.js"></script>
-<script type="text/javascript" src="/customerMgr/resources/js/datatable/editor.bootstrap.js"></script>
-<script type="text/javascript" src="/customerMgr/resources/js/datatable/jquery.dataTables.js"></script>
-<script type="text/javascript" src="/customerMgr/resources/js/datatable/responsive.jqueryui.js"></script>
-<script type="text/javascript" src="/customerMgr/resources/js/datatable/responsive.bootstrap.js"></script>
+<script type="text/javascript" src="resources/js/datatable/dataTables.bootstrap.js"></script>
+<script type="text/javascript" src="resources/js/datatable/editor.bootstrap.js"></script>
+<script type="text/javascript" src="resources/js/datatable/jquery.dataTables.js"></script>
+<script type="text/javascript" src="resources/js/datatable/responsive.jqueryui.js"></script>
+<script type="text/javascript" src="resources/js/datatable/responsive.bootstrap.js"></script>
  -->
 
 
@@ -62,12 +62,12 @@ $(document).ready(function() {
     editor = new $.fn.dataTable.Editor( {
         ajax: {
         	
-        	url : "http://localhost:8081/customerMgr/add",
+        	url : "add",
         	type : "POST",
         	datatype:"json",
         	contentType : "application/json",
         	data : function(d){
-        		alert(d);
+        		console.dir(d);
         		return JSON.stringify(d);
         	},
         	success:function(res){
@@ -100,7 +100,7 @@ $(document).ready(function() {
     $('#example').DataTable( {
         dom: "Bfrtip",
         ajax: {
-        	url : "http://localhost:8081/customerMgr/list",
+        	url : "list",
             type: 'GET'
         },
         columns: [
