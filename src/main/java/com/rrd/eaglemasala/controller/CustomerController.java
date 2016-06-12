@@ -1,6 +1,6 @@
 package com.rrd.eaglemasala.controller;
 
-import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -17,7 +17,10 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import com.rrd.eaglemasala.commons.CustomerJsonObject;
+import com.rrd.eaglemasala.commons.FilterCriteria;
+import com.rrd.eaglemasala.commons.GridData;
+import com.rrd.eaglemasala.commons.JQGridJSON;
+import com.rrd.eaglemasala.commons.JQGridRow;
 import com.rrd.eaglemasala.domain.Customer;
 import com.rrd.eaglemasala.service.CustomerService;
 
@@ -37,7 +40,7 @@ public class CustomerController {
     
     @RequestMapping(value="/list",produces="application/json")
     public @ResponseBody String listCustomer(Map<String, Object> map) {
-    	Map<String,List<Customer>> mapp=new HashMap<>();
+    	/*Map<String,List<Customer>> mapp=new HashMap<>();
         mapp.put("customerList", customerService.listCustomer());
         
         CustomerJsonObject customerJsonObject = new CustomerJsonObject();
@@ -48,7 +51,40 @@ public class CustomerController {
         customerJsonObject.setAaData(customerService.listCustomer());
 		
 		Gson gson = new GsonBuilder().setPrettyPrinting().create();
-		String json2 = gson.toJson(customerJsonObject);
+		String json2 = gson.toJson(customerJsonObject);*/
+		
+		
+		FilterCriteria filterCriteria = new FilterCriteria();
+		GridData gridData;
+		
+		int count;
+		gridData = (GridData) customerService.listCustomer();
+		count = gridData.getCount();
+		JQGridJSON jsonData = new JQGridJSON();
+		jsonData.setPage(filterCriteria.getCurrentPage());//pageCount
+		jsonData.setRecords(count);
+		jsonData.setTotal(""+gridData.getTotalPages());
+		List<JQGridRow> rows = new ArrayList<JQGridRow>();
+		List<Customer> userGridData = new ArrayList<Customer>();
+		userGridData = (List<Customer>) gridData.getListData();
+		LOGGER.info(userGridData.toString());
+		for(Customer objUser:userGridData)
+		{
+			JQGridRow row = new JQGridRow(); 
+			List<String> cells = new ArrayList<String>();
+			cells.add(objUser.getDT_RowId()+"");
+			cells.add(objUser.getFirstname());
+			cells.add(objUser.getLastname()+"");
+			cells.add(objUser.getEmail()+"");
+			
+			cells.add(objUser.getTelephone()+"");
+			row.setId(objUser.getDT_RowId()+"");
+			row.setCell(cells);
+			rows.add(row); 
+		}
+		jsonData.setRows(rows);
+		Gson gson = new GsonBuilder().setPrettyPrinting().create();
+		String json2 = gson.toJson(jsonData);
 	
 		return json2;
     }

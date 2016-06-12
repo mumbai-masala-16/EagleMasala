@@ -1,11 +1,10 @@
 package com.rrd.eaglemasala.service.api;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.rrd.eaglemasala.commons.GridData;
 import com.rrd.eaglemasala.dao.api.CustomerDAO;
 import com.rrd.eaglemasala.domain.Customer;
 import com.rrd.eaglemasala.service.CustomerService;
@@ -23,9 +22,10 @@ public class CustomerServiceImpl implements CustomerService {
     }
 
     @Transactional
-    public List<Customer> listCustomer() {
-
-        return customerDAO.listCustomer();
+    public GridData listCustomer() {
+    	GridData gridData = new GridData();
+    	gridData.setListData(customerDAO.listCustomer());
+        return gridData;
     }
 
     @Transactional

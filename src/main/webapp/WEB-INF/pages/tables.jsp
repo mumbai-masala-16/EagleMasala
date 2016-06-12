@@ -47,7 +47,12 @@
 }
 </style>
 
-<script> $("#pager table.ui-pg-table").css({float:"left"}); </script>
+<script> 
+
+$("#pager table.ui-pg-table").css({float:"left"});
+
+
+</script>
 
 </head>
 
@@ -58,151 +63,80 @@
 </body>
 
 <script>
-	alert("Dhaval ravi");
-	var mydata = [ {
-		id : "1",
-		invdate : "2010-05-24",
-		name : "test",
-		note : "note",
-		tax : "10.00",
-		total : "2111.00"
-	}, {
-		id : "2",
-		invdate : "2010-05-25",
-		name : "test2",
-		note : "note2",
-		tax : "20.00",
-		total : "320.00"
-	}, {
-		id : "3",
-		invdate : "2007-09-01",
-		name : "test3",
-		note : "note3",
-		tax : "30.00",
-		total : "430.00"
-	}, {
-		id : "4",
-		invdate : "2007-10-04",
-		name : "test",
-		note : "note dhaval rocks",
-		tax : "10.00",
-		total : "210.00"
-	},{
+	var myData;
+$(document).ready(function() {
+	$.getJSON( "list", {} )
+	  .done(function( json ) {
+	    
+	    myData = json.aaData;
+	    var gridData = new Array();
+	    gridData = myData;
+		//jQuery("#list47").jqGrid('setData', myData);
+		//jQuery("#list47").trigger("reloadGrid");
+	  })
+	  .fail(function( jqxhr, textStatus, error ) {
+	    var err = textStatus + ", " + error;
+	    console.log( "Request Failed: " + err );
+	});
+});	
 
-		id : "1",
-		invdate : "2010-05-24",
-		name : "test",
-		note : "note",
-		tax : "10.00",
-		total : "2111.00"
-	}, {
-		id : "2",
-		invdate : "2010-05-25",
-		name : "test2",
-		note : "note2",
-		tax : "20.00",
-		total : "320.00"
-	}, {
-		id : "3",
-		invdate : "2007-09-01",
-		name : "test3",
-		note : "note3",
-		tax : "30.00",
-		total : "430.00"
-	}, {
-		id : "4",
-		invdate : "2007-10-04",
-		name : "test",
-		note : "note dhaval rocks",
-		tax : "10.00",
-		total : "210.00"
-	},
-{
-		id : "1",
-		invdate : "2010-05-24",
-		name : "test",
-		note : "note",
-		tax : "10.00",
-		total : "2111.00"
-	}, {
-		id : "2",
-		invdate : "2010-05-25",
-		name : "test2",
-		note : "note2",
-		tax : "20.00",
-		total : "320.00"
-	}, {
-		id : "3",
-		invdate : "2007-09-01",
-		name : "test3",
-		note : "note3",
-		tax : "30.00",
-		total : "430.00"
-	}, {
-		id : "4",
-		invdate : "2007-10-04",
-		name : "test",
-		note : "note dhaval rocks",
-		tax : "10.00",
-		total : "210.00"
-	} ];
+ 
+ 
+ 
 	jQuery("#list47").jqGrid(
+			
 			{
-				data : mydata,
-				datatype : "local",
+				
+				//data : gridData,
+				url:"list",
+				 editurl: "add",
+				datatype : "json",
 				autowidth : true,
 				shrinkToFit : true,
 				//height : 150,
 				rowNum : 10,
 				//rowList : [ ],
-				colNames : [ 'Inv No Ravi', 'Date', 'Client', 'Amount', 'Tax',
-						'Notes' ],
+				colNames : [ 'Index', 'First Name', 'Last Name', 'Email', 'Telephone'],
 				colModel : [ {
-					name : 'id',
-					index : 'id',
+					
+					name : 'aaData.DT_RowId',
+					index : 'aaData.DT_RowId',
 					//width : 60,
 					sorttype : "int",
 					editable : true
 				}, {
-					name : 'invdate',
-					index : 'invdate',
+					name : 'aaData.firstname',
+					index : 'aaData.firstname',
 					width : 250,
-					sorttype : "date",
-					formatter : "date",
 					editable : true
 				}, {
-					name : 'name',
-					index : 'name',
+					name : 'aaData.lastname',
+					index : 'aaData.lastname',
 					//width : 100,
 					editable : true
-				}, {
-					name : 'amount',
-					index : 'amount',
-					//width : 80,
-					align : "right",
-					sorttype : "float",
-					formatter : "number",
-					editable : true
-				}, {
-					name : 'tax',
-					index : 'tax',
-					//width : 80,
-					align : "right",
-					sorttype : "float",
-					editable : true
-				},  {
-					name : 'note',
-					index : 'note',
+				},{
+					name : 'aaData.email',
+					index : 'aaData.email',
 					//width : 150,
 					sortable : false,
 					editable : true
 					//height: auto,
 					
+				},
+				{
+					name : 'aaData.telephone',
+					index : 'aaData.telephone',
+					//width : 80,
+					editable : true
 				} ],
 				pager : "#plist47",
 				pgtext: null, 
 				viewrecords : false,
-				caption : "Manipulating Array Data"
+				caption : "Manipulating Array Data",
+				headers: { 
+					'Accept': 'application/json',
+					'Content-Type': 'application/json' 
+					}
 			//editurl: 'server.php', // this is dummy existing url
 			});
 
